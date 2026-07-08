@@ -38,6 +38,26 @@ ask ──► 0 classify ──► 1 define done ──► 2 evidence ──► 
 
 Every arrow has tie-breaks, escape hatches, and hard bounds (3 failed verify cycles → stop and hand back; 2 fruitless lookups → stop searching; can't name a verification → ask one pointed question). The full method is [skills/fable-method/SKILL.md](skills/fable-method/SKILL.md), ~110 lines, every sentence load-bearing.
 
+### The whole thing, as one flowchart
+
+```mermaid
+flowchart TD
+    IN["Any incoming ask"] --> TRIV{"Trivial?<br/>one file, under 10 lines,<br/>no new behavior, no searching"}
+    TRIV -->|yes| DOIT["Do it, run the one obvious check,<br/>report in two sentences"]
+    TRIV -->|"no, or unsure"| SHAPE{"What shape is the ask?"}
+    SHAPE -->|"question or assessment"| ASSESS["Diagnose only, change nothing.<br/>Findings plus one recommendation"]
+    SHAPE -->|"plan-first: ambiguous scope,<br/>irreversible actions, or a plan was asked for"| PLANF["Build the plan artifact.<br/>STOP for approval"]
+    SHAPE -->|task| DOM{"Which domain?"}
+    DOM -->|coding| LOOP2["Run the loop:<br/>evidence, decide, act, verify"]
+    DOM -->|"marketing, research, data,<br/>business, finance, legal, design"| ADAPT["Load the domain adapter.<br/>Its minimum evidence set is binding"]
+    ADAPT --> LOOP2
+    LOOP2 --> JPASS["Judge pass before presenting:<br/>every claim observed, or relabeled a caveat"]
+    ASSESS --> JPASS
+    JPASS --> OUT["Report, outcome first,<br/>honest caveats"]
+```
+
+Six more charts (ask classification with tie-breaks, the bounded evidence loop, the intent gate, the verify loop with its hard bound, the judge's verdict flow, and the family router) live in [references/flowcharts.md](skills/fable-method/references/flowcharts.md). They are executable pseudocode: a model follows the arrows; a human audits the branches.
+
 ## Install
 
 **As a Claude Code plugin (recommended).** Inside any Claude Code session:

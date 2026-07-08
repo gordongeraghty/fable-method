@@ -17,7 +17,7 @@ A mid-tier model that follows this loop beats a stronger model that free-styles:
 /fable-method report       rewrite the answer you were about to send per Step 6
 ```
 
-Deeper material loads on demand: `references/failure-modes.md` (symptom to step map for 14 common agent failures), `references/examples.md` (full worked examples for every ask shape), `references/domains/` (domain adapters, see below).
+Deeper material loads on demand: `references/failure-modes.md` (symptom to step map for 14 common agent failures), `references/examples.md` (full worked examples for every ask shape), `references/domains/` (domain adapters, see below), `references/flowcharts.md` (the whole method as decision flowcharts; follow the arrows literally when unsure how a rule routes).
 
 **Domain adapters.** Coding is the default domain. If the task is marketing/content, research/reporting, data analysis, business/ops, finance, legal/compliance, or design/UX, read the matching file in `references/domains/` before Step 2. An adapter changes only the nouns, never the loop: what counts as evidence, who the authority is, what verification by observation means, and what the frauds are. Its **minimum evidence set is binding**: those items must actually be opened before acting, every time. Research is never optional; the adapter defines how much is enough. Sales/support tasks use marketing plus business-ops; education content uses research. Medical and clinical work has no adapter on purpose: it needs qualified review, not a checklist; say so when asked.
 
