@@ -51,4 +51,8 @@ Four runs per cell, two scenarios, LLM judges: smoke-test grade, not a benchmark
 
 ## Reproducing
 
-`workflow.js` is a Claude Code Workflow script. Edit the `BASE` path at the top, create per-run copies of a scenario, and invoke the Workflow tool with the script. Without Claude Code: run any agent on a fixture copy under the two conditions and have any strong model grade with the rubric prompt embedded in the script.
+Every scenario folder is now self-documenting: its `GROUND-TRUTH.md` carries the exact task prompt, the trap, and the scoring caps. **Never include GROUND-TRUTH.md in the copy given to an agent under test** (it is the answer sheet; three fixtures also contain a README.md that is part of the trap itself, which is why the answer sheet uses a different filename).
+
+`workflow.js` is a Claude Code Workflow script. Edit the `BASE` path at the top, create per-run copies of a scenario (excluding GROUND-TRUTH.md), and invoke the Workflow tool with the script. Without Claude Code: run any agent on a fixture copy under the two conditions and have any strong model grade against the scenario's GROUND-TRUTH.md.
+
+On size: these are deliberately small, single-decision fixtures, minutes to run and possible for a layperson to grade, at the cost of realism at scale. Large multi-file scenarios are the most valuable contribution the suite could receive; see CONTRIBUTING.
