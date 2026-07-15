@@ -48,8 +48,8 @@ try:
 except Exception as e:
     fail(f"version check: {e}")
 
-# 3. All three skills exist with frontmatter name + description
-for skill in ["fable-method", "fable-loop", "fable-judge"]:
+# 3. All four skills exist with frontmatter name + description
+for skill in ["fable-method", "fable-loop", "fable-judge", "fable-domain"]:
     path = os.path.join(ROOT, "skills", skill, "SKILL.md")
     try:
         with io.open(path, encoding="utf-8") as f:
