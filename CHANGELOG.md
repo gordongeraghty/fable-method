@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- **fable-orchestrate** (new skill): the fleet layer. fable-loop runs one task with subagents; fable-orchestrate runs a program of tasks across many executors: self-contained dispatch contracts (`FILES` / `ACCEPT` / `CONSTRAINTS` / `MODEL` / `VERIFY`, agents inherit nothing), explicit tier routing with a small-tier dispatch floor, worktree isolation with central logging, independent refuting verifiers, a non-optional controller backstop with a forced `BACKSTOP:` line (the orchestrator re-runs the real gates personally before integrating; one reviewer's approval is signal, not proof), per-track hard bounds, and the AUTH gate on merges. Trap fixture at `eval/scenarios/s15-controller-backstop/`, hardened by two adversarial review passes before its first round; first A/B logged as round 16 in `eval/RESULTS.md`: decision ceiling-null at the weak tier, `BACKSTOP:` artifact transferred 2 of 2 skill runs vs 0 of 2 bare. Distilled from production operating doctrine; no rule beyond the backstop claims committed evidence yet.
+
 ## 1.4.0 (2026-07-15)
 
 - **Fit gate** (fable-method, before Step 0): routes each ask by where the answer lives - run the loop, research first, make a skill, or say plainly that the answer is a judgment call. The universal fallback is an honest hand-back, never faked rigor.
