@@ -1,6 +1,6 @@
 {
   "name": "fable-method",
-  "description": "Home of the Fable Workflow plugin: Claude Fable 5's working method as four skills (think / act / prove / grow), with the eval that keeps them honest.",
+  "description": "Home of the Fable Workflow plugin: Claude Fable 5's working method as five skills (think / act / prove / grow / direct), with the eval that keeps them honest.",
   "owner": {
     "name": "Sahir619",
     "url": "https://github.com/Sahir619"
