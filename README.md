@@ -4,6 +4,17 @@
 
 [![checks](https://github.com/Sahir619/fable-method/actions/workflows/checks.yml/badge.svg)](https://github.com/Sahir619/fable-method/actions/workflows/checks.yml) [![license](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE) [![plugin](https://img.shields.io/badge/claude_code-plugin_v1.4.0-blue.svg)](.claude-plugin/plugin.json)
 
+> ### This is a fork: the Fable Method, plus a fifth skill
+>
+> This repository is a fork of **[Sahir619/fable-method](https://github.com/Sahir619/fable-method)**, the original Fable Method. It keeps all four original skills unchanged and adds a fifth, **`fable-orchestrate`**: the fleet layer for running the method across many agents at once. One lead model writes self-contained task contracts, delegates the work to cheaper executor agents, and re-runs the real gates itself before trusting any "it is done" report.
+>
+> - **The original four, unchanged:** think (`fable-method`), act (`fable-loop`), prove (`fable-judge`), grow (`fable-domain`).
+> - **Added here:** direct (`fable-orchestrate`), documented alongside the others throughout this README. It brings dispatch contracts, explicit model tiering (do not pay top-tier rates for grunt work), worktree isolation, refuting verifiers, and a controller backstop, with its own trap fixture at [`eval/scenarios/s15-controller-backstop/`](eval/scenarios/s15-controller-backstop/) and a first A/B in [round 16](eval/RESULTS.md).
+> - **Honest status, same bar as the rest of the repo:** the backstop rule is trap-armed and eval-logged; the skill's other rules are documentation-grade doctrine that each still owe a trap, and the skill says so in its own Evidence status.
+> - **Staying current:** upstream improvements can be merged in later without losing this layer.
+>
+> Full credit for the method itself goes to the original author. Everything below describes the shared method, with the fifth skill folded in where it belongs.
+
 **How Claude Fable 5 worked, written down before it was gone. With the eval that keeps it honest.**
 
 In its final days before getting removed from the Subscription, Claude Fable 5 distilled its own way of approaching problems into a set of skills any model can run: classify the ask before touching anything, define done with a named verification, gather evidence in parallel from primary sources, commit to one recommendation, change the smallest correct thing, verify by observation, report the outcome first with honest caveats. Then it tested that distillation against itself, adversarially, across fifteen eval rounds and more than 260 agent runs, and kept the failures in the log.
