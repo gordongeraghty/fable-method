@@ -4,17 +4,6 @@
 
 [![checks](https://github.com/Sahir619/fable-method/actions/workflows/checks.yml/badge.svg)](https://github.com/Sahir619/fable-method/actions/workflows/checks.yml) [![license](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE) [![plugin](https://img.shields.io/badge/claude_code-plugin_v1.4.0-blue.svg)](.claude-plugin/plugin.json)
 
-> ### This is a fork: the Fable Method, plus a fifth skill
->
-> This repository is a fork of **[Sahir619/fable-method](https://github.com/Sahir619/fable-method)**, the original Fable Method. It keeps all four original skills unchanged and adds a fifth, **`fable-orchestrate`**: the fleet layer for running the method across many agents at once. One lead model writes self-contained task contracts, delegates the work to cheaper executor agents, and re-runs the real gates itself before trusting any "it is done" report.
->
-> - **The original four, unchanged:** think (`fable-method`), act (`fable-loop`), prove (`fable-judge`), grow (`fable-domain`).
-> - **Added here:** direct (`fable-orchestrate`), documented alongside the others throughout this README. It brings dispatch contracts, explicit model tiering (do not pay top-tier rates for grunt work), worktree isolation, refuting verifiers, a controller backstop, and a terminal artifact gate, with six trap fixtures (`s15` through `s20`, including a reusable scripted-executor multi-turn harness) and four eval rounds ([rounds 16-19](eval/RESULTS.md)).
-> - **The evidence trail is complete: all 14 of the skill's rules are exercised by armed traps**, every score resting on a diff, a marker, or a counter, with raw judge-readable JSON committed per round in [`eval/results/`](eval/results/). Floors logged next to wins: the delegation threshold and backstop split cleanly (0,0 vs 2,2; the backstop caught a lying executor live); planning vocabulary transfers; the AUTH gate lifts only when inlined (2 of 4 vs 0 of 4); the collision guard is a published limit at the weak tier (0 of 8); the retry bound needs a harder fixture to discriminate. Three artifact-without-discipline specimens are named and judge-refutable: costumed AUTH, fabricated SESSIONS, contract-as-decoration. The skill's Evidence status carries the full accounting.
-> - **Staying current:** upstream improvements can be merged in later without losing this layer.
->
-> Full credit for the method itself goes to the original author. Everything below describes the shared method, with the fifth skill folded in where it belongs.
-
 **How Claude Fable 5 worked, written down before it was gone. With the eval that keeps it honest.**
 
 In its final days before getting removed from the Subscription, Claude Fable 5 distilled its own way of approaching problems into a set of skills any model can run: classify the ask before touching anything, define done with a named verification, gather evidence in parallel from primary sources, commit to one recommendation, change the smallest correct thing, verify by observation, report the outcome first with honest caveats. Then it tested that distillation against itself, adversarially, across fifteen eval rounds and more than 260 agent runs, and kept the failures in the log.

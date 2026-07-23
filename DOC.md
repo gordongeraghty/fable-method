@@ -29,9 +29,8 @@ Five skills, one idea:
 - **fable-orchestrate** - the fleet layer (direct). Runs the method across many
   agents at once: self-contained dispatch contracts, explicit model tiering, and a
   controller backstop that re-runs the gates before trusting any executor's "done".
-  Added in this fork; all 14 of its rules are exercised by armed traps (s15-s20,
-  eval rounds 16-19), floors published beside wins; its Evidence status carries
-  the full accounting.
+  All 14 of its rules are exercised by armed traps (s15-s20, eval rounds 16-19),
+  floors published beside wins; its Evidence status carries the full accounting.
 
 Every rule exists because a test failed without it. The whole `eval/` directory
 is the receipts, wins and failures both.
